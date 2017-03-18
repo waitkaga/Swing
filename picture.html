@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/picture.css" charset="UTF-8">
+	</head>
+	<body>
+		<div class="main">
+			<div class="top">
+				<img src="img/huaji.ico" />
+				<span id="title">{{title}}播放器</span>
+				<div class="top right">
+				    <span id="min"></span>
+				    <span id="max"></span>
+				    <span id="close">X</span>
+				</div>
+			</div>
+			<div class="left">
+				<div class="btn" v-for="btn in btns">
+					<button type="button" id="a">{{btn.name1}}</button>
+					<button type="button" id="b">{{btn.name2}}</button>
+					<button type="button" id="c">{{btn.name3}}</button>
+					<button type="button" id="d">{{btn.name4}}</button>
+					<button type="button" id="e">{{btn.name5}}</button>
+				</div>
+			</div>
+			<div id="right" class="right">
+				<div class="search">
+					<input type="text"><button>{{search}}</button>
+				</div>
+				<div class="body">
+					<div class="body-top">
+						<img src="img/body-1.png" id="body" >
+					</div>
+					<div class="body-bottom"></div>
+				</div>
+			</div>
+		</div>
+		<div class="describe">
+			<pre>
+				项目一组框架选用郑君琪的
+				具体任务分配：{
+				1.郑君琪：电视剧面板
+				2.杨浩悦：热门影视面板
+				3.谭钫严：综艺面板
+				4.张   伟：电视剧面板
+				5.唐海东：动漫面板
+				}
+			</pre>
+		</div>
+		<script src="js/vue.js"></script>
+	    <script type="text/javascript" charset="UTF-8">
+			﻿new Vue({
+				el:".top",
+				data:{
+					title:"滑稽影音"
+				}
+			});
+			new Vue({
+				el:".left",
+				data:{
+					btns:[{
+						name1:"热门影视",
+						name2:"电影",
+						name3:"综艺",
+						name4:"电影",
+						name5:"动漫"
+					}]
+				}
+			});
+			new Vue({
+				el:".main",
+				data: {
+					search: "搜索"
+				}
+			});
+			document.getElementById("a").onclick=function(){
+				var x=document.getElementById("body");
+				x.src="img/body-1.png";
+			};
+			document.getElementById("b").onclick=function(){
+				var x=document.getElementById("body");
+				x.src="img/body-3.png";
+			};
+			document.getElementById("c").onclick=function(){
+				var x=document.getElementById("body");
+				x.src="img/body-4.png";
+			};
+			document.getElementById("d").onclick=function(){
+				var x=document.getElementById("body");
+				x.src="img/body-2.png";
+			};
+			document.getElementById("e").onclick=function(){
+				var x=document.getElementById("body");
+				x.src="img/body.png";
+			};
+		</script>
+	</body>
+</html>
